@@ -1,0 +1,104 @@
+:root {
+    --primary-color: rgba(255, 255, 255, 0.2);
+    --secondary-color: rgba(255, 255, 255, 0.1);
+    --glass-blur: blur(10px);
+    --text-color: #fff;
+    --operator-color: rgba(255, 165, 0, 0.7);
+    --equals-color: rgba(76, 175, 80, 0.7);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: var(--text-color);
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 320px;
+}
+
+.calculator-glass {
+    background: var(--primary-color);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.display-container {
+    margin-bottom: 20px;
+}
+
+.history {
+    min-height: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+    text-align: right;
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+.display {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    border: none;
+    font-size: 1.3rem;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: var(--glass-blur);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.operator {
+    background: var(--operator-color);
+}
+
+.operator:hover {
+    background: rgba(255, 165, 0, 0.9);
+}
+
+.equals {
+    background: var(--equals-color);
+}
+
+.equals:hover {
+    background: rgba(76, 175, 80, 0.9);
+}
+
+@media (max-width: 400px) {
+    .calculator-container {
+        max-width: 90%;
+    }
+}
